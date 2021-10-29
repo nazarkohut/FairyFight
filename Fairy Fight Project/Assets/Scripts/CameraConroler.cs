@@ -40,24 +40,26 @@ public class CameraConroler : MonoBehaviour
         private void Update() {
             if(player){
                 int curentX = Mathf.RoundToInt(player.position.x);
-                if(curentX > lastX) isLeft = false;
-                else if(curentX < lastX) isLeft = true;
-                lastX = Mathf.RoundToInt(player.position.x);
+                isLeft = curentX < lastX;
 
+                lastX = Mathf.RoundToInt(player.position.x);
+                Debug.Log(player.position.y);
                 Vector3 target;
                 if( isLeft){
                     target = new Vector3(player.position.x - offset.x,player.position.y - offset.y,transform.position.z);
                 }else{
                     target = new Vector3(player.position.x + offset.x,player.position.y + offset.y,transform.position.z);
                 }
+
                 Vector3 curentPosition = Vector3.Lerp(transform.position,target,dumping*Time.deltaTime);
-                transform.position=curentPosition; 
-            }
-            transform.position = new Vector3(
-                Mathf.Clamp(transform.position.x,leftLimit,rightLimit),
-                Mathf.Clamp(transform.position.y,upperLimit,downLimit),
+                transform.position = new Vector3(
+                Mathf.Clamp(curentPosition.x, leftLimit,rightLimit),
+                Mathf.Clamp(curentPosition.y,upperLimit,downLimit),
                 transform.position.z
             );
+
+            }
+           
         }
     
 }
