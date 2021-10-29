@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    int damage = 3;
+
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.name.Equals("Fairy")){
+            //Homer.Damage_to_main_hero();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+
 }
