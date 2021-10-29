@@ -15,18 +15,19 @@ public class Fairy : MonoBehaviour
 
     private BoxCollider2D boxCollider;
 
-    private RaycastHit2D hit;
 
     private Vector3 moveDelta;
     bool isAttacking = false;
 
-
+    public static int HealthPoint = 10;
+    public static bool isAttacked;
 
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         attackHitBox.SetActive(false);
+        isAttacked = false;
     }
 
     IEnumerator DoAttack()
@@ -50,18 +51,13 @@ public class Fairy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //reset MoveDelta
         moveDelta = Vector3.zero;
-
-        // start_local_scale=transform.localScale;
 
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
 
         moveDelta = new Vector3(x * velocity, y * velocity, 0);
 
-
-        //swap sprite direction , wether you ging right or left
         if (moveDelta.x < 0)
         {
             transform.localScale = new Vector3(Math.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
@@ -71,6 +67,7 @@ public class Fairy : MonoBehaviour
 
 
         transform.Translate(moveDelta * Time.deltaTime);
-
+        //Debug.Log(HealthPoint);
     }
+
 }
