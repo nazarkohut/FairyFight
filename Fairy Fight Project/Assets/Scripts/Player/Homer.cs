@@ -21,7 +21,6 @@ public class Homer : MonoBehaviour
 
 
 
-
     private void Start() {
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
