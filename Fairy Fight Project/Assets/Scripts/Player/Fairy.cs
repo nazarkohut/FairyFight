@@ -11,7 +11,7 @@ public class Fairy : MonoBehaviour
     int velocity;
 
     [SerializeField]
-    GameObject attackHitBox;
+    GameObject attackBullet;
 
     private BoxCollider2D boxCollider;
 
@@ -22,20 +22,27 @@ public class Fairy : MonoBehaviour
     public static int HealthPoint = 10;
     public static bool isAttacked;
 
+    public static bool isRight = true;
+
     private void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
-        attackHitBox.SetActive(false);
+        attackBullet.SetActive(false);
         isAttacked = false;
     }
 
     IEnumerator DoAttack()
     {
-        attackHitBox.SetActive(true);
-        yield return new WaitForSeconds(.2f);
-        attackHitBox.SetActive(false);
-
+        yield return new WaitForSeconds(.38f);
+        GameObject bullet = (GameObject)Instantiate(attackBullet);
+        if(isRight)
+            bullet.transform.position = new Vector3(transform.position.x + 1.5f, transform.position.y - 0.4f, transform.position.z);
+        else
+            bullet.transform.position = new Vector3(transform.position.x - 1.5f, transform.position.y - 0.4f, transform.position.z);
+        bullet.SetActive(true);
+        yield return new WaitForSeconds(.5f);
+        Destroy(bullet);
         isAttacking = false;
     }
     private void Update()
@@ -58,13 +65,17 @@ public class Fairy : MonoBehaviour
 
         moveDelta = new Vector3(x * velocity, y * velocity, 0);
 
+
         if (moveDelta.x < 0)
         {
             transform.localScale = new Vector3(Math.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            isRight = false;
         }
         else if (moveDelta.x > 0)
+        {
             transform.localScale = new Vector3(Math.Abs(transform.localScale.x) * -1, transform.localScale.y, transform.localScale.z);
-
+            isRight = true;
+        }
 
         transform.Translate(moveDelta * Time.deltaTime);
         //Debug.Log(HealthPoint);

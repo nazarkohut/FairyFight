@@ -21,9 +21,10 @@ public class DestroyObjects : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if(collision.gameObject.name == "AttackHitBox"){
+        
+        if(collision.gameObject.name == "fairy_bullet(Clone)"){
             // isShacking=true;
-	    Debug.Log("dasasdads");
+            Debug.Log("here");
             animator.Play("destroy");
              Invoke("ExplodeTheObject",.3f);
         }
