@@ -18,7 +18,6 @@ public class SlimeHPbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(slime.HealthPoint);
         localScale.x = ((float)slime.HealthPoint / (float)slime.MaxHealthPoint) * (float)startLocalScale.x;
         transform.localScale = localScale;
     }

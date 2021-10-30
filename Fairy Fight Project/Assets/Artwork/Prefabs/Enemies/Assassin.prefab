@@ -45,7 +45,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.59987545, y: 1.262892}
+  m_Offset: {x: 0.9087105, y: 1.7073741}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -56,7 +56,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.841505, y: 3.5257835}
+  m_Size: {x: 7.1557903, y: 4.41475}
   m_EdgeRadius: 0
 --- !u!114 &307993854
 MonoBehaviour:
@@ -140,9 +140,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 352936381
+  m_SortingLayer: 2
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 84b9bf3e74c88a340be81c5c414fde95, type: 3}
   m_Color: {r: 0.5754717, g: 0.013572444, b: 0.013572444, a: 1}
   m_FlipX: 0
@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 771155201}
   - component: {fileID: 771155202}
   - component: {fileID: 771155203}
+  - component: {fileID: 976249682}
   m_Layer: 0
   m_Name: Assassin
   m_TagString: Untagged
@@ -199,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 4821391441002227522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -34.86, y: 3.1, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 1}
+  m_LocalScale: {x: 8, y: 8, z: 0.98001254}
   m_Children:
   - {fileID: 307993853}
   - {fileID: 356390785}
@@ -243,9 +244,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 352936381
+  m_SortingLayer: 2
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1882347247711912902, guid: c528b39aef63ca8429d31b6969d00dbd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -296,7 +297,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &5623781582446792853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,7 +325,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.050515585, y: 0.0021047965}
+  m_Offset: {x: 0.030162513, y: 0.002104789}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -335,7 +336,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2321298, y: 0.41420966}
+  m_Size: {x: 0.2728359, y: 0.41420966}
   m_EdgeRadius: 0
 --- !u!61 &771155202
 BoxCollider2D:
@@ -375,9 +376,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92e00ea14d0e3641bfbd283d737a24b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthPoint: 3
-  MaxHealthPoint: 3
+  HealthPoint: 5
+  MaxHealthPoint: 5
   bodyCollider: {fileID: 771155201}
   attackCollider: {fileID: 771155202}
   animator: {fileID: 4821391441002227523}
   hitBox: {fileID: 307993852}
+--- !u!61 &976249682
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4821391441002227522}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.03052941, y: -0.033921607}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.35, y: 0.41}
+    newSize: {x: 0.35, y: 0.41}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.37854624, y: 0.17286263}
+  m_EdgeRadius: 0

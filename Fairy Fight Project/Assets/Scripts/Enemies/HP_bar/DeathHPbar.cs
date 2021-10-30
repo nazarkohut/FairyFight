@@ -18,7 +18,6 @@ public class DeathHPbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(death.HealthPoint);
         localScale.x = ((float)death.HealthPoint / (float)death.MaxHealthPoint) * (float)startLocalScale.x;
         transform.localScale = localScale;
     }

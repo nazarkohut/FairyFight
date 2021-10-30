@@ -24,8 +24,7 @@ public class Fairy : MonoBehaviour
     bool isAttacking = false;
 
     [SerializeField]
-    public static int MaxHealthPoint = 100;
-    public static int HealthPoint;
+    public static int HealthPoint = 100;
 
     public static bool isAttacked;
 
@@ -33,7 +32,6 @@ public class Fairy : MonoBehaviour
 
     private void Start()
     {
-        HealthPoint = MaxHealthPoint;
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         attackBullet.SetActive(false);
