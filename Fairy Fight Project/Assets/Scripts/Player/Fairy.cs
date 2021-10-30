@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Fairy : MonoBehaviour
@@ -9,7 +10,7 @@ public class Fairy : MonoBehaviour
     public Animator animator;
    
     [SerializeField]
-    int velocity;
+    public int velocity;
 
     [SerializeField]
     GameObject attackBullet;
@@ -94,9 +95,9 @@ public class Fairy : MonoBehaviour
         if (collision.IsTouching(boxCollider) && collision.gameObject.tag.Equals("bullet"))
         {
             HealthPoint -= 1;
-            if (HealthPoint == 0)
+            if (HealthPoint <= 0)
             {
-                Destroy(gameObject);
+                SceneManager.LoadScene("Lose");
             }
         }
     }

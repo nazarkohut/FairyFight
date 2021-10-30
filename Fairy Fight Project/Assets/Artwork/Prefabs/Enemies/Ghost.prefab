@@ -173,6 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 6665529162544042014}
   attackBullet: {fileID: 9118615323633052012}
+  HealthPoint: 2
   attackCollider: {fileID: 38018998}
   bodyCollider: {fileID: 38018999}
 --- !u!61 &38018999

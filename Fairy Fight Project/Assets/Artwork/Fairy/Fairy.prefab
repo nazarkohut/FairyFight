@@ -168,6 +168,7 @@ MonoBehaviour:
   animator: {fileID: 2203128867558989996}
   velocity: 15
   attackBullet: {fileID: 8368420616545168523}
+  HPbar: {fileID: 0}
 --- !u!1 &8368420616545168523
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +185,7 @@ GameObject:
   - component: {fileID: 1208528131442103111}
   m_Layer: 0
   m_Name: fairy_bullet
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -323,3 +324,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 60
+  way: {x: 0, y: 0, z: 0}
