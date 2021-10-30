@@ -14,7 +14,7 @@ public class TrapDamage : MonoBehaviour
         if (collider.gameObject.name.Equals("Fairy") && !Fairy.isAttacked)
         {         
             Fairy.HealthPoint -= damage;
-            Fairy.DamageTake.Play();
+            SoundManagerScript.PlaySound("damage_take");
             Debug.Log(Fairy.HealthPoint);
             Fairy.isAttacked = true;
             Task.Delay(1000).ContinueWith(t => { Fairy.isAttacked = false; });

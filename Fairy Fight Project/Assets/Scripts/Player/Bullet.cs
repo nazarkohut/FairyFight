@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     public float speed;
 
-    Vector3 way;
+    public  Vector3 way;
     void Start()
     {
         if(Fairy.isRight)
@@ -16,9 +16,9 @@ public class Bullet : MonoBehaviour
         else
             way = new Vector3(-1, Input.GetAxisRaw("Vertical"), 1);
     }
+    
     private void Update()
     {   
-        
         gameObject.GetComponent<Rigidbody2D>().velocity = transform.TransformDirection(speed, 0,0);    
         gameObject.GetComponent<Rigidbody2D>().transform.right = way ;
     }
