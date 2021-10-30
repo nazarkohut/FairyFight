@@ -7,6 +7,7 @@ public class Lose : MonoBehaviour
 {
     public void RestartButton()
     {
+        Timer.currentTime = 0;
         SceneManager.LoadScene("map");
     }
 
