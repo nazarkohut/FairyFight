@@ -23,6 +23,7 @@ public class Fairy : MonoBehaviour
     bool isAttacking = false;
 
     public static int HealthPoint = 10;
+
     public static bool isAttacked;
 
     public static bool isRight = true;
@@ -83,7 +84,17 @@ public class Fairy : MonoBehaviour
         }
 
         transform.Translate(moveDelta * Time.deltaTime);
-        //Debug.Log(HealthPoint);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.IsTouching(boxCollider) && collision.gameObject.tag.Equals("bullet"))
+        {
+            HealthPoint -= 1;
+            if (HealthPoint == 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
 }
