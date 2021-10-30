@@ -12,8 +12,7 @@ public class TrapDamage : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collider)
     {
         if (collider.gameObject.name.Equals("Fairy") && !Fairy.isAttacked)
-        {
-           
+        {         
             Fairy.HealthPoint -= damage;
             SoundManagerScript.PlaySound("damage_take");
             Debug.Log(Fairy.HealthPoint);
