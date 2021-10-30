@@ -15,14 +15,13 @@ public class Fairy : MonoBehaviour
 
     private BoxCollider2D boxCollider;
 
-    [SerializeField]
-    public static AudioSource DamageTake;
-
 
     private Vector3 moveDelta;
     bool isAttacking = false;
 
+    [SerializeField]
     public static int HealthPoint = 10;
+
     public static bool isAttacked;
 
     public static bool isRight = true;
@@ -44,6 +43,8 @@ public class Fairy : MonoBehaviour
             bullet.transform.position = new Vector3(transform.position.x + 1.5f, transform.position.y - 0.4f, transform.position.z);
         else
             bullet.transform.position = new Vector3(transform.position.x - 1.5f, transform.position.y - 0.4f, transform.position.z);
+ 
+
         bullet.transform.localScale = new Vector3(5, 5, 5);
         bullet.SetActive(true);
         yield return new WaitForSeconds(.5f);
