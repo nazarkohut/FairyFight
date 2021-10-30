@@ -11,20 +11,23 @@ public class Ghost : MonoBehaviour
 
     bool isAttacking = false;
 
-    public static int HealthPoint = 2;
+
+    public int MaxHealthPoint = 2;
+    public int HealthPoint;
+
 
     public CircleCollider2D attackCollider;
     public BoxCollider2D bodyCollider;
 
     void Start()
     {
+        HealthPoint = MaxHealthPoint;
         animator = GetComponent<Animator>();
         attackBullet.SetActive(false);
     }
     IEnumerator DoAttack()
     {
         yield return new WaitForSeconds(.15f);
-
         GameObject bullet = (GameObject)Instantiate(attackBullet);
         bullet.transform.position = new Vector3(transform.position.x , transform.position.y + 0.4f, transform.position.z);
         bullet.transform.localScale = new Vector3(5, 5, 5);
@@ -50,11 +53,10 @@ public class Ghost : MonoBehaviour
     {   
         if (collision.IsTouching(bodyCollider) && collision.gameObject.name.Equals("fairy_bullet(Clone)"))
         {
-            Debug.Log("here");
             HealthPoint -= 1;
-            if (HealthPoint <= 0)
+            if (HealthPoint == 0)
             {
-                SceneManager.LoadScene("Lose");
+                Destroy(gameObject);
             }
         }
     }
