@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Assassin : MonoBehaviour
@@ -14,7 +15,7 @@ public class Assassin : MonoBehaviour
     public BoxCollider2D attackCollider;
 
     public Animator animator;
-
+    bool isAttacked = false;
     [SerializeField]
     public GameObject hitBox;
 
@@ -47,13 +48,19 @@ public class Assassin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.IsTouching(bodyCollider) && collision.gameObject.name.Equals("fairy_bullet(Clone)"))
+        if (collision.IsTouching(bodyCollider) && collision.gameObject.name.Equals("fairy_bullet(Clone)")&&!isAttacked)
         {
+            isAttacked = true;
             HealthPoint -= 1;
             if (HealthPoint == 0)
             {
                 Destroy(gameObject);
             }
+            Task.Delay(400).ContinueWith(t =>
+            {
+                isAttacked = false;
+
+            });
         }
     }
 }

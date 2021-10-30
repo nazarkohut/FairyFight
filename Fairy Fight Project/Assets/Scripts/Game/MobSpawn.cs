@@ -31,6 +31,8 @@ public class MobSpawn : MonoBehaviour
 
     void SpawnMethod()
     {
-        Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPoints[Random.Range(0, spawnPoints.Length)]);
+  
+        GameObject enemy =  Instantiate(enemies[Random.Range(0, enemies.Length)]);
+        enemy.transform.position = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position;
     }
 }
