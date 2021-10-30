@@ -18,7 +18,6 @@ public class GhostHPbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(ghost.HealthPoint);
         localScale.x = ((float)ghost.HealthPoint / (float)ghost.MaxHealthPoint) * (float)startLocalScale.x;
         transform.localScale = localScale;
     }

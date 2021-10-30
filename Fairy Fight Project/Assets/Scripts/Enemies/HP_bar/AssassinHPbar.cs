@@ -18,7 +18,6 @@ public class AssassinHPbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(assassin.HealthPoint);
         localScale.x = ((float)assassin.HealthPoint / (float)assassin.MaxHealthPoint) * (float)startLocalScale.x;
         transform.localScale = localScale;
     }
