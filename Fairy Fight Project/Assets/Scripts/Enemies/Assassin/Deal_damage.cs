@@ -13,6 +13,7 @@ public class Deal_damage : MonoBehaviour
         if (collision.gameObject.name.Equals("Fairy"))
         {
             Fairy.HealthPoint -= damage;
+            SoundManagerScript.PlaySound("damage_take");
             if (Fairy.HealthPoint <= 0)
             {
                 SceneManager.LoadScene("Lose");

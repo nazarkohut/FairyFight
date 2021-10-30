@@ -376,8 +376,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38fdea4279352924da59ba126de2af83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthPoint: 5
-  MaxHealthPoint: 5
+  HealthPoint: 4
+  MaxHealthPoint: 4
   bodyCollider: {fileID: 1566786570}
   attackCollider: {fileID: 1566786571}
   animator: {fileID: 3730322864075730474}

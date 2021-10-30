@@ -21,7 +21,7 @@ public class MobSpawn : MonoBehaviour
         {
             isCreating = true;
             SpawnMethod();
-            Task.Delay(1000).ContinueWith(t =>
+            Task.Delay(4000).ContinueWith(t =>
             {
                 isCreating = false;
 

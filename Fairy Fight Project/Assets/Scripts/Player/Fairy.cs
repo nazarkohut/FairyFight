@@ -8,13 +8,13 @@ using UnityEngine.UI;
 public class Fairy : MonoBehaviour
 {
     public Animator animator;
-   
+
     [SerializeField]
     public int velocity;
 
     [SerializeField]
     GameObject attackBullet;
-    [SerializeField] 
+    [SerializeField]
     Text HPbar;
 
     private BoxCollider2D boxCollider;
@@ -24,7 +24,8 @@ public class Fairy : MonoBehaviour
     bool isAttacking = false;
 
     [SerializeField]
-    public static int HealthPoint = 100;
+    public static int MaxHealthPoint = 100;
+    public static int HealthPoint;
 
     public static bool isAttacked;
 
@@ -32,6 +33,7 @@ public class Fairy : MonoBehaviour
 
     private void Start()
     {
+        HealthPoint = MaxHealthPoint;
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         attackBullet.SetActive(false);
@@ -43,11 +45,11 @@ public class Fairy : MonoBehaviour
     {
         yield return new WaitForSeconds(.38f);
         GameObject bullet = (GameObject)Instantiate(attackBullet);
-        if(isRight)
+        if (isRight)
             bullet.transform.position = new Vector3(transform.position.x + 1.5f, transform.position.y - 0.4f, transform.position.z);
         else
             bullet.transform.position = new Vector3(transform.position.x - 1.5f, transform.position.y - 0.4f, transform.position.z);
- 
+
 
         bullet.transform.localScale = new Vector3(5, 5, 5);
         bullet.SetActive(true);
@@ -94,7 +96,8 @@ public class Fairy : MonoBehaviour
     {
         if (collision.IsTouching(boxCollider) && collision.gameObject.tag.Equals("bullet"))
         {
-            HealthPoint -= 1;
+            HealthPoint -= 2;
+            SoundManagerScript.PlaySound("damage_take");
             if (HealthPoint <= 0)
             {
                 SceneManager.LoadScene("Lose");

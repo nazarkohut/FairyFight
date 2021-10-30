@@ -45,6 +45,7 @@ public class Slime : MonoBehaviour
         {
             isAttacking = true;
             Fairy.HealthPoint -= 3;
+            SoundManagerScript.PlaySound("damage_take");
             Task.Delay(1000).ContinueWith(t => {
                 isAttacking = false;
 

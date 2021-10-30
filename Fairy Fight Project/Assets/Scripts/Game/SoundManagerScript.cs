@@ -40,7 +40,7 @@ public class SoundManagerScript : MonoBehaviour
         switch (clip)
         {
             case "damage_take":
-                audioSrc.PlayOneShot(damageTakeSound);
+                audioSrc.PlayOneShot(damageTakeSound,0.6f);
                 break;
         }
     }

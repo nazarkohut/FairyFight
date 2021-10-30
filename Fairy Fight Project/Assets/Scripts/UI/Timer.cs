@@ -9,8 +9,6 @@ public class Timer : MonoBehaviour
     float currentTime = 0;
 
     [SerializeField] Text countdown;
-    
-    [SerializeField] string endGameMenu;
 
     void Start()
     {
@@ -19,14 +17,11 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-
-        currentTime -= 1 * Time.deltaTime;
-        countdown.text = currentTime.ToString("f0");
-
-        if(currentTime <= 0)
+        if( Fairy.HealthPoint >= 0)
         {
-            currentTime = 0;
-            Application.LoadLevel(endGameMenu);
+            currentTime += 1 * Time.deltaTime;
+            countdown.text = currentTime.ToString("f0");
         }
+        
     }
 }
