@@ -23,6 +23,7 @@ public class Candy : MonoBehaviour
         {
             CandyCounter.Candy += score;
             Destroy(gameObject);
+            Fairy.HealthPoint += score;
         }
     }
 }
