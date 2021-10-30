@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Fairy : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Fairy : MonoBehaviour
 
     [SerializeField]
     GameObject attackBullet;
+    [SerializeField] 
+    Text HPbar;
 
     private BoxCollider2D boxCollider;
 
@@ -20,7 +23,7 @@ public class Fairy : MonoBehaviour
     bool isAttacking = false;
 
     [SerializeField]
-    public static int HealthPoint = 10;
+    public static int HealthPoint = 100;
 
     public static bool isAttacked;
 
@@ -60,6 +63,7 @@ public class Fairy : MonoBehaviour
 
             StartCoroutine(DoAttack());
         }
+        HPbar.text = HealthPoint.ToString();
     }
 
     private void FixedUpdate()
