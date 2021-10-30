@@ -8,6 +8,7 @@ public class Slime : MonoBehaviour
     bool isAttacking = false;
 
     public int HealthPoint = 5;
+    public int MaxHealthPoint = 5;
 
     public BoxCollider2D bodyCollider;
 
@@ -33,13 +34,16 @@ public class Slime : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if (collision.gameObject.name.Equals("Fairy")&&!isAttacking)
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.name.Equals("Fairy") && !isAttacking)
         {
             isAttacking = true;
-            Fairy.HealthPoint -= 3; 
-            Task.Delay(1000).ContinueWith(t => { 
+            Fairy.HealthPoint -= 3;
+            Task.Delay(1000).ContinueWith(t => {
                 isAttacking = false;
-             
+
             });
         }
     }

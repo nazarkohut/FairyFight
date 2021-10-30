@@ -7,6 +7,7 @@ public class Assassin : MonoBehaviour
     bool isAttacking = false;
 
     public int HealthPoint = 3;
+    public int MaxHealthPoint = 3;
 
     public BoxCollider2D bodyCollider;
 

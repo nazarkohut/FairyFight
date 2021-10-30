@@ -7,6 +7,7 @@ public class Death : MonoBehaviour
     bool isAttacking = false;
 
     public int HealthPoint = 5;
+    public int MaxHealthPoint = 5;
 
     public BoxCollider2D bodyCollider;
 
