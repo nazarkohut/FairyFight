@@ -11,8 +11,10 @@ public class Ghost : MonoBehaviour
 
     bool isAttacking = false;
 
+
     public int MaxHealthPoint = 2;
     public int HealthPoint;
+
 
     public CircleCollider2D attackCollider;
     public BoxCollider2D bodyCollider;
