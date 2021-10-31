@@ -29,10 +29,10 @@ public class Boss : MonoBehaviour
     }
     IEnumerator DoAttack()
     {
-        yield return new WaitForSeconds(1.4f);
+        yield return new WaitForSeconds(0.8f);
         hitBox.SetActive(true);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.7f);
         hitBox.SetActive(false);
         gameObject.GetComponent<Move>().enabled = true;
         isAttacking = false;
@@ -60,6 +60,8 @@ public class Boss : MonoBehaviour
             if (HealthPoint == 0)
             {
                 Destroy(gameObject);
+                Fairy.HealthPoint += 10;
+                Timer.currentTime += 20;
             }
             Task.Delay(400).ContinueWith(t =>
             {

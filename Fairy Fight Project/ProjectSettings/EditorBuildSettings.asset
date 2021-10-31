@@ -14,13 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/map.unity
     guid: 6a4543b888030874ab4e29445e63ee66
-  - enabled: 1
-    path: Assets/Scenes/WonScene.unity
-    guid: c8bb0a93d741b1249bd96a4840e1fe1b
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Lose.unity
     guid: 6174df63f923d1247958f8a2cdfa9207
-  - enabled: 1
-    path: Assets/Scenes/AltEnd.unity
-    guid: e34d4ea1e26592047b9dc9daa06ff6ac
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

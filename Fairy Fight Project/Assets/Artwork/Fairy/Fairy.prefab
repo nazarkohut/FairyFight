@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2203128867558989996}
-  velocity: 15
+  velocity: 10
   attackBullet: {fileID: 8368420616545168523}
   HPbar: {fileID: 0}
 --- !u!1 &8368420616545168523
