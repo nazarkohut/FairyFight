@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {   [SerializeField]
-    float startingTime ;
-    float currentTime = 0;
+    float startingTime;
+    public static float currentTime = 0;
 
     [SerializeField] Text countdown;
 
     void Start()
     {
-        currentTime = startingTime;
     }
 
     void Update()
@@ -20,8 +19,7 @@ public class Timer : MonoBehaviour
         if( Fairy.HealthPoint >= 0)
         {
             currentTime += 1 * Time.deltaTime;
-            countdown.text = currentTime.ToString("f0");
         }
-        
+        countdown.text = currentTime.ToString("f0");   
     }
 }

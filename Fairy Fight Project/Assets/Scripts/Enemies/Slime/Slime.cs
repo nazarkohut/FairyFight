@@ -31,6 +31,8 @@ public class Slime : MonoBehaviour
             if (HealthPoint == 0)
             {
                 Destroy(gameObject);
+                Fairy.HealthPoint += 1;
+                Timer.currentTime += 5;
             }
             Task.Delay(400).ContinueWith(t =>
             {
