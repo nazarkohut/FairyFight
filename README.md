@@ -8,7 +8,7 @@
 </p>
 
 # FairyFight
-# The game where fairy🧚🏻 kills🩸 monsters using her shotgun🔫
+### The game where fairy🧚🏻 kills🩸 monsters using her shotgun🔫
 #### Gameplay🎮
 The main character is a water💧 fairy who got into the afterlife. But as it turned out in this world🌎 do not like guests, so our heroine will have a very unpleasant time⏰. To survive, she will have to fight horrible monsters (Slime, Death, Ghost👻, Assassin). Also, every 100 points will be filled with a fiery boss.
 #### Control🕹️
